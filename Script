@@ -1,0 +1,264 @@
+local tool = Instance.new("Tool")
+tool.Name = "Combo"
+tool.RequiresHandle = false
+
+local lastPressTime = 0
+tool.Activated:Connect(function()
+  local currentTime = tick()
+            if currentTime - lastPressTime >= 3 then
+                lastPressTime = currentTime 
+                for i = 1, 6 do
+game:GetService("ReplicatedStorage").Remotes.Vanishing:FireServer()
+end
+ wait(0.3)
+if game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Anchored == true then
+  repeat wait() until game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Anchored == false
+  wait(0.45)
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Velocity = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame.LookVector * -200
+ wait(0.25)
+  game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Blue"):FireServer()
+    wait(0.9)
+    game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Velocity = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame.LookVector * 210
+     wait(0.2)
+     for i = 1, 8 do
+game:GetService("ReplicatedStorage").Remotes.Beatdown:FireServer()
+end
+end
+            end
+end)
+
+tool.Parent = game.Players.LocalPlayer.Backpack
+
+local tool = Instance.new("Tool")
+tool.Name = "Massacre"
+tool.RequiresHandle = false
+
+local lastPressTime = 0
+tool.Activated:Connect(function()
+  local currentTime = tick()
+            if currentTime - lastPressTime >= 5 then
+                lastPressTime = currentTime 
+                local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local humanoid = character:WaitForChild("Humanoid")
+local hp = humanoid.RootPart.CFrame
+for i = 1, 2 do
+    game:GetService("ReplicatedStorage").Idk:FireServer()
+end
+ wait(1.38)
+local closestDistance = math.huge
+local closestHumanoid = nil
+local Usuario = game.Players.LocalPlayer
+
+for _, v in pairs(workspace:GetDescendants()) do
+    if v:IsA("Humanoid") and v.RootPart and v.RootPart.Parent ~= Usuario.Character then
+        local distance = (v.RootPart.Position - Usuario.Character.HumanoidRootPart.Position).magnitude
+        if distance < closestDistance and distance <= 80 then
+            closestDistance = distance
+            closestHumanoid = v
+        end
+    end
+end
+
+if closestHumanoid and closestHumanoid.Health ~= 0 and closestHumanoid.RootPart then
+  humanoid.RootPart.CFrame = closestHumanoid.RootPart.CFrame * CFrame.new(0,0,2)
+ wait(5.2)
+humanoid.HipHeight = 0
+ local closestDistance = math.huge
+local closestHumanoid = nil
+local Usuario = game.Players.LocalPlayer
+
+for _, v in pairs(workspace:GetDescendants()) do
+    if v:IsA("Humanoid") and v.RootPart and v.RootPart.Parent ~= Usuario.Character then
+        local distance = (v.RootPart.Position - Usuario.Character.HumanoidRootPart.Position).magnitude
+        if distance < closestDistance and distance <= 10 then
+            closestDistance = distance
+            closestHumanoid = v
+        end
+    end
+end
+
+if closestHumanoid and closestHumanoid.Health ~= 0 and closestHumanoid.RootPart then
+   for i = 1, 1 do
+   game:GetService("ReplicatedStorage").sukuna.remotes.rush:FireServer()
+   end
+   wait(0.5)
+humanoid.HipHeight = 0
+  local count = 0
+repeat wait(0.05)
+count = count + 1
+   humanoid.RootPart.CFrame = closestHumanoid.RootPart.CFrame * CFrame.new(0,0,2)
+until count >= 10
+ if closestHumanoid.Health >= 80 and closestHumanoid.Health ~= 0 and humanoid.Health ~= 0 then
+  wait(2.4)
+game:GetService("ReplicatedStorage").Deku:FireServer()
+local count = 0
+repeat task.wait()
+count = count + 1
+   humanoid.RootPart.CFrame = closestHumanoid.RootPart.CFrame * CFrame.new(0,0,1.5)
+until count >= 60
+ else
+wait(1)
+ for i = 1, 30 do
+game:GetService("ReplicatedStorage").Remotes.Punches:FireServer()
+end
+ local counta = 0
+repeat task.wait()
+counta = counta + 1
+   humanoid.RootPart.CFrame = closestHumanoid.RootPart.CFrame * CFrame.new(0,0,2.85)
+until counta >= 65
+ end
+wait(0.5)
+humanoid.RootPart.CFrame = hp
+humanoid.HipHeight = 0
+end
+end
+            end
+end)
+
+tool.Parent = game.Players.LocalPlayer.Backpack
+
+local tool = Instance.new("Tool")
+tool.Name = "Managed Megumin"
+tool.RequiresHandle = false
+
+local lastPressTime = 0
+tool.Activated:Connect(function()
+  local currentTime = tick()
+            if currentTime - lastPressTime >= 0.1 then
+                lastPressTime = currentTime
+                local mouse = game.Players.LocalPlayer:GetMouse()
+local hit = mouse.Hit.Position
+                local oht = Vector3.new(hit.X, hit.Y, hit.Z)
+game:GetService("ReplicatedStorage").Megumin.Remote:FireServer(oht)
+            end
+end)
+
+tool.Parent = game.Players.LocalPlayer.Backpack
+
+local tool = Instance.new("Tool")
+tool.Name = "I Can't Be Stopped "
+tool.RequiresHandle = false
+
+local lastPressTime = 0
+tool.Activated:Connect(function()
+  local currentTime = tick()
+            if currentTime - lastPressTime >= 4 then
+                lastPressTime = currentTime 
+                for i = 1, 60 do
+  game:GetService("ReplicatedStorage").GojoSatoru.rush:FireServer()
+  if i == 60 then
+    wait(0.5)
+    local Players = game:GetService("Players")
+    local ReplicatedStorage = game:GetService("ReplicatedStorage")
+    local TeleportInterval = 0.4
+
+    local function teleportToHumanoids(player)
+      for _, humanoid in pairs(workspace:GetDescendants()) do
+        if humanoid:IsA("Humanoid") and humanoid.Health ~= 0 and humanoid.Parent ~= player.Character and humanoid.RootPart then
+          player.Character:MoveTo(humanoid.RootPart.Position)
+          wait(TeleportInterval)
+        end
+      end
+    end
+
+    local localPlayer = Players.LocalPlayer
+    teleportToHumanoids(localPlayer)
+  end
+end
+            end
+end)
+
+tool.Parent = game.Players.LocalPlayer.Backpack
+
+local tool = Instance.new("Tool")
+tool.Name = "Hacker's Wrath"
+tool.RequiresHandle = false
+
+local lastPressTime = 0
+tool.Activated:Connect(function()
+  local currentTime = tick()
+            if currentTime - lastPressTime >= 5 then
+                lastPressTime = currentTime 
+                local players = game:GetService("Players"):GetPlayers()
+
+for _, player in ipairs(players) do
+coroutine.wrap(function()
+    if player.Character and player.Character.Humanoid.Health ~= 0 and player.Character:FindFirstChild("HumanoidRootPart") then
+local ohTable1 = {
+                ["Function"] = "Fire",
+                ["Name"] = "OmniDirectionalPunch",
+                ["rootpos"] = player.Character.HumanoidRootPart.CFrame
+            }
+
+           
+game:GetService("ReplicatedStorage").Server:InvokeServer(ohTable1)
+  end
+ end)()
+end
+          wait(0.25)
+          local player = game.Players.LocalPlayer
+local humanoid = player.Character.Humanoid
+local activeTracks = humanoid:GetPlayingAnimationTracks()
+
+for _, track in pairs(activeTracks) do
+    track:Stop()
+end
+  wait(0.1)
+        local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://18628901584"
+local k = game:GetService("Players").LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+k.Looped = false
+k:Play()
+k:AdjustSpeed(0.525)
+            end
+end)
+
+tool.Parent = game.Players.LocalPlayer.Backpack
+
+local tool = Instance.new("Tool")
+tool.Name = "Void Bring Tool"
+tool.RequiresHandle = false
+tool.ToolTip = "Finds the nearest humanoid and teleports it into the void"
+
+local lastPressTime = 0
+tool.Activated:Connect(function()
+  local currentTime = tick()
+            if currentTime - lastPressTime >= 2.5 then
+                lastPressTime = currentTime 
+                local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://15061182798"
+local k = game:GetService("Players").LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+k:Play()
+k:AdjustSpeed(0.75)
+wait(1.2)
+
+local closestDistance = math.huge
+local closestHumanoid = nil
+local Usuario = game.Players.LocalPlayer
+
+for _, v in pairs(workspace:GetDescendants()) do
+    if v:IsA("Humanoid") and v.RootPart and v.RootPart.Parent ~= Usuario.Character then
+        local distance = (v.RootPart.Position - Usuario.Character.HumanoidRootPart.Position).magnitude
+        if distance < closestDistance and distance <= 100 then
+            closestDistance = distance
+            closestHumanoid = v
+        end
+    end
+end
+
+if closestHumanoid and closestHumanoid.Health ~= 0 and closestHumanoid.RootPart then
+   local gh = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+   wait(0.1)
+   game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-246, -189, 2850)
+   wait(0.2)
+
+   local ohInstance1 = workspace[closestHumanoid.Parent.Name]["Torso"] 
+   game:GetService("ReplicatedStorage").Remote.BoogieWoogie:FireServer(ohInstance1)
+   task.wait(0.95)
+   game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = gh
+end
+            end
+end)
+
+tool.Parent = game.Players.LocalPlayer.Backpack
