@@ -206,11 +206,63 @@ for _, track in pairs(activeTracks) do
 end
   wait(0.1)
         local Anim = Instance.new("Animation")
-Anim.AnimationId = "rbxassetid://18628901584"
+Anim.AnimationId = "rbxassetid://18774164755"
 local k = game:GetService("Players").LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
 k.Looped = false
 k:Play()
 k:AdjustSpeed(0.525)
+            end
+end)
+
+tool.Parent = game.Players.LocalPlayer.Backpack
+
+local tool = Instance.new("Tool")
+tool.Name = "Hollow Punch"
+tool.RequiresHandle = false
+
+local lastPressTime = 0
+tool.Activated:Connect(function()
+  local currentTime = tick()
+            if currentTime - lastPressTime >= 10 then
+                lastPressTime = currentTime 
+                game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = true
+                local StarterGui = game:GetService("StarterGui")
+StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.Backpack, false)
+                local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://16449579122"
+Anim.Name = "Testor"
+local k = game:GetService("Players").LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+k:Play()
+k:AdjustSpeed(1)
+Spooky = Instance.new("Sound", game.Players.LocalPlayer.Character.Torso)
+Spooky.Name = "Hollow Punch"
+Spooky.SoundId = "rbxassetid://14737679866"
+Spooky.Volume = 3
+Spooky.PlaybackSpeed = 1
+Spooky.Looped = false
+Spooky:Play()
+ wait(8.6)
+for i = 0, 3 do
+coroutine.wrap(function()
+   local ohTable1 = {
+                ["Function"] = "Fire",
+                ["Name"] = "OmniDirectionalPunch",
+                ["rootpos"] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0,0,-100 * i)
+            }
+
+            game:GetService("ReplicatedStorage").Server:InvokeServer(ohTable1)
+            game:GetService("RunService").Heartbeat:Wait()
+local animations = game.Players.LocalPlayer.Character.Humanoid:GetPlayingAnimationTracks()
+for i, animation in ipairs(animations) do
+    if animation.Animation.Name ~= "Testor" then
+        animation:Stop()
+    end
+end
+            end)()
+    end
+    game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = false
+    local StarterGui = game:GetService("StarterGui")
+StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.Backpack, true)
             end
 end)
 
